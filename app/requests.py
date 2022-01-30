@@ -103,7 +103,19 @@ def process_src_articles(articles_list):
 
     return articles_results
 
+def search_articles(term):
+    search_url = search_base_url.format(term, api_key)
 
+    with urllib.request.urlopen(search_url) as url:
+        search_data = url.read()
+        search_response = json.loads(search_data)
+
+        search_results = None
+        if search_response['articles']:
+            articles = search_response['articles']
+            search_results = process_src_articles(articles)
+
+    return search_results
 
 
     
