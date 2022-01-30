@@ -75,6 +75,35 @@ def get_src_articles(source):
 
     return articles_results
 
+def process_src_articles(articles_list):
+    '''
+    Function  that processes the articles results and transforms them to a list of Objects
+    Args:
+        articles_list: A list of dictionaries that contain articles 
+    Returns :
+        articles_results: A list of article objects
+    '''
+    articles_results = []
+    for article in articles_list:
+        article_src = article.get('source')
+        article_author = article.get('author')
+        article_title = article.get('title')
+        article_description = article.get('description')
+        article_content = article.get('content')
+        published_at = article.get('publishedAt')
+        article_url = article.get('url')
+        article_image_url = article.get('urlToImage')
+
+        
+        publish_date = parser.parse(published_at)
+
+        if article_image_url and article_content and article_url:
+            article_object = Article(article_src, article_author, article_title, article_description, article_content, publish_date, article_url, article_image_url)
+            articles_results.append(article_object)
+
+    return articles_results
+
+
 
 
     
