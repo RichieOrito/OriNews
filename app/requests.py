@@ -57,6 +57,24 @@ def process_src_results(sources_list):
 
     return sources_results
 
+def get_src_articles(source):
+    '''
+    Function that gets all the articles from a given source.
+    '''
+    get_src_articles_url = src_articles_base_url.format(source, api_key)
+
+    with urllib.request.urlopen(get_src_articles_url) as url:
+        src_articles_data = url.read()
+        src_articles_response = json.loads(src_articles_data)
+
+        articles_results = None
+
+        if src_articles_response['articles']:
+            articles_results_list = src_articles_response['articles']
+            articles_results = process_src_articles(articles_results_list)
+
+    return articles_results
+
 
 
     
