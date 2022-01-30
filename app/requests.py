@@ -41,6 +41,21 @@ def get_sources():
 
     return sources_results
 
+def process_src_results(sources_list):
+    '''
+    Function that takes in the response from the API and maps it into the Source objects, then populates the list with the sources.
+    '''
+    sources_results = []
+    for source_item in sources_list:
+        src_id = source_item.get('id')
+        src_name = source_item.get('name')
+        src_category = source_item.get('category')
+        src_url = source_item.get('url')
+
+        source_object = Source(src_id, src_name, src_category, src_url)
+        sources_results.append(source_object)
+
+    return sources_results
 
 
 
