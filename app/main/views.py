@@ -1,4 +1,3 @@
-from turtle import title
 from flask import render_template, request, url_for, redirect
 from . import main
 from ..requests import get_sources, get_src_articles, search_articles
@@ -45,5 +44,26 @@ def index():
     else:
         return render_template('index.html', categories = categories, title = title)
 
+@main.route('/articles/<source_id>')
+def source(source_id):
+    '''
+    View articles page function that returns articles from the specified sources.
+    '''
+    articles = get_src_articles(source_id)
+    title = articles[0].article_src['name'] + ' | Newsrun'
+
+    return render_template('articles.html', articles = articles, title = title)
+
+@main.route('/search/<term>')
+def search(term):
+    '''
+    View function to display the search results
+    '''
+    terms = term.split(' ')
+    query = '+'.join(terms)
+    articles_found = search_articles(query)
+    title = 'Search Results | Newsrun'
+    
+    return render_template('search.html', articles = articles_found, title = title)
 
     
