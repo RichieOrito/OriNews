@@ -1,8 +1,10 @@
 from flask import Flask
 from config import config_options
 from flask_material import Material
+# from flask_bootstrap import Bootstrap
 
-material = Material
+material = Material()
+# bootstrap = Bootstrap()
 
 def create_app(config_name):
     app = Flask(__name__)
@@ -10,8 +12,11 @@ def create_app(config_name):
     #Create the app configurations.
     app.config.from_object(config_options[config_name])
 
-    #Initializing Materialize
+    #Initializing Material
     material.init_app(app)
+    # bootstrap.init_app(app)
+
+    app.static_folder = 'static'
 
     #Register blueprint.
     from .main import main as main_blueprint
