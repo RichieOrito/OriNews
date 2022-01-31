@@ -1,2 +1,3 @@
-from app import views
-from app import error
+from flask import Blueprint
+main = Blueprint('main', __name__)
+from . import views, error

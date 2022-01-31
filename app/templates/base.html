@@ -1,18 +1,17 @@
 {% extends 'material/base.html'%}
 
-{% block navbar %}
 
-    {% include 'header.html' %}
+{% block navbar %}
+    {% include 'header.html'%}
 {% endblock %}
 
-{% block content %}
-    {% block main %}
+{%block content%}
+    {%block main%}
 
-    {% endblock %}
+    {%endblock%}
 
     {% block footer %}
-        {% include 'footer.html' %}
+        {%include 'footer.html'%}
+    {%- endblock %}
 
-    {% endblock %}
-
-{% endblock%}
+{%endblock%}

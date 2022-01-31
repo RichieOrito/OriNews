@@ -2,14 +2,12 @@ from flask import render_template, request, url_for, redirect
 from . import main
 from ..requests import get_sources, get_src_articles, search_articles
 
-# Views
+
 @main.route('/')
 def index():
-
     '''
     View root page function that returns the index page and its data
     '''
-
     sports = []
     business = []
     entertainment = []
@@ -18,7 +16,6 @@ def index():
     science = []
     technology = []
     sources = get_sources()
-
     for source in sources:
         if source.src_category == 'sports':
             sports.append(source)
@@ -37,7 +34,7 @@ def index():
     categories = [general, entertainment, business, sports, health, technology, science]
 
     search_articles = request.args.get('query')
-    title = 'Home | Newsrun'
+    title = 'Home | OriNews'
 
     if search_articles:
         return redirect(url_for('main.search', term = search_articles))
@@ -50,7 +47,7 @@ def source(source_id):
     View articles page function that returns articles from the specified sources.
     '''
     articles = get_src_articles(source_id)
-    title = articles[0].article_src['name'] + ' | Newsrun'
+    title = articles[0].article_src['name'] + ' | OriNews'
 
     return render_template('articles.html', articles = articles, title = title)
 
@@ -62,8 +59,6 @@ def search(term):
     terms = term.split(' ')
     query = '+'.join(terms)
     articles_found = search_articles(query)
-    title = 'Search Results | Newsrun'
+    title = 'Search Results | OriNews'
     
     return render_template('search.html', articles = articles_found, title = title)
-
-    

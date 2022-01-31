@@ -1,4 +1,3 @@
-from turtle import title
 from flask import render_template
 from . import main
 
@@ -7,7 +6,5 @@ def four_Ow_four(error):
     '''
     Function to render the 404 error page
     '''
-    title = 'Not Found | Orinews'
+    title = 'Not Found | OriNews'
     return render_template('fourOwfour.html', error_msg = error, title=title),404
-
-
