@@ -32,22 +32,24 @@
 
 * Git clone https://github.com/RichieOrito/OriNews.git
 
-* or
+or
 
 * Git fork - Enter into your own repository and search-https://github.com/RichieOrito/OriNews then click on fork to add
 it on your own repository.
 
 * Navigate into the cloned project. 
-* `cd oriNews`
+`cd oriNews`
 
-* Create a `start.sh`file
-
-* `touch start.sh`
+* Create a `start.sh` file
+ `touch start.sh`
 
 * Inside `start.sh`, add your API key from  https://newsapi.org/ and the `manage.py` command for excuting which starts the server.
 
 * `start.sh` add your API key from  https://newsapi.org/  and the command for executing `manage.py`, which will start the server.
-* `export NEWS_API_KEY='<YOUR_API_KEY>'
+
+`export NEWS_API_KEY=<YOUR_API_KEY>`
+
+`export SECRET_KEY=<YOUR_SECRET_KEY>`
 
  python manage.py server`
 
