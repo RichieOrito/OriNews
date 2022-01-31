@@ -10,3 +10,13 @@ def create_app(config_name):
     #Create the app configurations.
     app.config.from_object(config_options[config_name])
 
+    #Initializing Materialize
+    material.init_app(app)
+
+    #Register blueprint.
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+
+
+    return app
