@@ -2,8 +2,6 @@ import urllib.request, json
 from .models import Article, Source
 from dateutil import parser
 
-from dateutil import parser
-
 # Getting api key
 api_key = None
 
