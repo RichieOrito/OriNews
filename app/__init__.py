@@ -16,8 +16,6 @@ def create_app(config_name):
     material.init_app(app)
     # bootstrap.init_app(app)
 
-    app.static_folder = 'static'
-
     #Register blueprint.
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
