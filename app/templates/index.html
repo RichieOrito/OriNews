@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+<!-- Styles block -->
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+{% endblock %}
+
+{%block main%}
+{{ super() }}
+<div class="container sources mt-4">
+    <div class="my-5">
+        <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+              </div>
+            </div>
+          </form>
+    </div>
+    <hr>
+    {% for category in categories %}
+    <h5 class="my-3 category">{{category[0].src_category.upper()}}</h5>
+    <hr>
+    <div class="source-list">
+        {{ macro.displaySources(category) }}
+        <hr>
+    </div>
+    {%endfor%}
+</div>
+{%endblock%}
