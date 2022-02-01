@@ -52,6 +52,22 @@ hr{
     color: var(--main1-color);
 }
 
+.healine{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1.3rem;
+    align-items:center;
+    margin-bottom: 50px;
+}
+
+.healine img{
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    /* border: 3px solid var(--main1-color); */
+    padding: 4px;
+}
+
 span{
     color: var(--main4-color);
 }

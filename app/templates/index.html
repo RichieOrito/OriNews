@@ -21,6 +21,12 @@
             </div>
         </form>
     </div>
+    <div class="healine">
+    <img src="{{ url_for('static', filename='images/martin-sanchez-Tzoe6VCvQYg-unsplash.jpg')}}">
+    <img src="{{ url_for('static', filename='images/thomas-de-luze-w3hHYb2e86U-unsplash.jpg')}}">
+    <img src="{{ url_for('static', filename='images/connor-coyne-OgqWLzWRSaI-unsplash.jpg')}}">
+    <img src="{{ url_for('static', filename='images/thisisengineering-raeng-w_zE6qlkQKA-unsplash.jpg')}}">
+    </div>
     <hr>          
     {% for category in categories %}
     <h5 class="my-3 category">{{category[0].src_category.upper()}}</h5>
