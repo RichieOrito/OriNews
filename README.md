@@ -6,7 +6,7 @@
 
 + [Description](#description)
 + [Behaviour Driven Development](#behaviour-driven-development)
-+ [Installation Requirement](#installation-requirement)
++ [Installation Requirement](#Installation)
 + [Technology Used](#technology-used)
 + [Reference](#reference)
 + [Licence](#licence)
@@ -17,7 +17,7 @@
 
 <p>A web application where users can search search for articles according to the source name.</p>
 
-## Behavior Driven Development
+## Behaviour Driven Development
 
 <p>
 
@@ -122,6 +122,6 @@ Github - [RICHIE ORITO](https://github.com/RichieOrito)
 
 ## Live Link
 
-LiveLink- [Gh-pages]()
+LiveLink- [Gh-pages](https://orinews.herokuapp.com/)
 
 [Go Back to the top](#oriNews)
